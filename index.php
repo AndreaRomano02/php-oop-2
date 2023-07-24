@@ -1,4 +1,6 @@
-<?php  ?>
+<?php
+include_once __DIR__ . '/models/Shop.php';
+?>
 
 <!DOCTYPE html>
 <html lang="en">
