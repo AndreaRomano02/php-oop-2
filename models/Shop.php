@@ -41,6 +41,8 @@ class Shop
 
 $pet = new Product('PROVA', 'gatto', 10);
 $pet2 = new Food('PROVA 2', 'cane', 10, 300, ['pane', 'pasta']);
+$pet3 = new Toys('PROVA 3', 'cane', 10, 'Gommoso e soffice', [8.5, 10]);
+$pet4 = new Other('PROVA 4', 'cane', 10, 'Materiale espanso', [10, 5, 25]);
 
-$test = new Shop('ciao', [$pet, $pet2]);
+$test = new Shop('ciao', [$pet, $pet2, $pet3, $pet4]);
 var_dump($test);

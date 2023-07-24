@@ -19,7 +19,7 @@ class Food extends Product
   }
   public function setWeight($weight)
   {
-    if (!strlen($weight) || $weight <= 0) return;
+    if (!strlen($weight) || !is_numeric($weight) || $weight <= 0) return;
     $this->weight = $weight . 'g';
   }
 
