@@ -2,7 +2,7 @@
 class Product
 {
 
-  protected $image;
+  public $image = 'Nessuna Immagine';
   protected $description;
   protected $type;
   protected $price;
