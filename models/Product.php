@@ -1,16 +1,17 @@
 <?php
-class Pets
+class Product
 {
+
+  protected $image;
   protected $description;
   protected $type;
   protected $price;
-  protected $weight;
-  protected $ingredients;
 
-  public function __construct($description, $type)
+  public function __construct(String $description, String $type, String $price)
   {
     $this->setDescription($description);
     $this->setType($type);
+    $this->setPrice($price);
   }
 
   public function getDescription()
@@ -37,5 +38,16 @@ class Pets
       if (strtolower($type) === strtolower($currentType))
         $this->type = $type;
     }
+  }
+
+  public function getPrice()
+  {
+    return $this->price;
+  }
+
+  public function setPrice($price)
+  {
+    if (!is_numeric($price)) return;
+    $this->price = '€' .  number_format($price, 2);
   }
 }

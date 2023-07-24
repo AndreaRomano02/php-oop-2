@@ -1,5 +1,8 @@
 <?php
-require_once __DIR__ . '/Pets.php';
+require_once __DIR__ . '/Product.php';
+include_once __DIR__ . '/products/Food.php';
+include_once __DIR__ . '/products/Toys.php';
+include_once __DIR__ . '/products/Other.php';
 
 class Shop
 {
@@ -31,13 +34,13 @@ class Shop
   public function setPets($pets)
   {
     foreach ($pets as $pet)
-      if (!$pet || !$pet instanceof Pets) return;
+      if (!$pet || !$pet instanceof Product) return;
       else $this->pets = $pets;
   }
 }
 
-$pet = new Pets('PROVA', 'gatto');
-$pet2 = new Pets('PROVA 2', 'cane');
+$pet = new Product('PROVA', 'gatto', 10);
+$pet2 = new Food('PROVA 2', 'cane', 10, 300, ['pane', 'pasta']);
 
 $test = new Shop('ciao', [$pet, $pet2]);
 var_dump($test);
