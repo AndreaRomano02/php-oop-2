@@ -4,9 +4,9 @@ require_once __DIR__ . '/Pets.php';
 class Shop
 {
   protected $title;
-  protected $pets;
+  protected $pets = [];
 
-  public function __construct($title, $pets)
+  public function __construct(String $title, array $pets)
   {
     $this->setTitle($title);
     $this->setPets($pets);
@@ -30,12 +30,14 @@ class Shop
 
   public function setPets($pets)
   {
-    if (!$pets) return;
-    $this->pets = $pets;
+    foreach ($pets as $pet)
+      if (!$pet || !$pet instanceof Pets) return;
+      else $this->pets = $pets;
   }
 }
 
 $pet = new Pets('PROVA', 'gatto');
+$pet2 = new Pets('PROVA 2', 'cane');
 
-$test = new Shop('ciao', $pet);
+$test = new Shop('ciao', [$pet, $pet2]);
 var_dump($test);
